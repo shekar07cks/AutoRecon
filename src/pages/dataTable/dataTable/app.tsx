@@ -7,13 +7,13 @@ import {
 } from 'react-router-dom';
 import DataTable from './dataTable';
 
-interface IReaderAppState {
+interface IDataTableAppState {
 }
-interface IReaderAppProps extends RouteComponentProps<{}> {
+interface IDataTableAppProps extends RouteComponentProps<{}> {
 }
 
-class App extends React.Component<IReaderAppProps, IReaderAppState> {
-    constructor(props: IReaderAppProps) {
+class App extends React.Component<IDataTableAppProps, IDataTableAppState> {
+    constructor(props: IDataTableAppProps) {
         super(props);
     }
     render() {
@@ -25,11 +25,6 @@ class App extends React.Component<IReaderAppProps, IReaderAppState> {
                         path={`${this.props.match.url}`}
                         component={(props: RouteComponentProps<{}>) => <DataTable {...props} />}
                     />
-                    {/* <Route
-                        exact={true}
-                        path={`${this.props.match.url}/Reconciled`}
-                        component={NostroReconciled}
-                    /> */}
                 </Switch>
             </ Router>
         );

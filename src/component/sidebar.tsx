@@ -54,7 +54,7 @@ class Sidebar extends React.Component<ISidebarProps, ISidebarState> {
               </li>
               <li>
                 <Link className={(this.props.match.url === '/DataTable1') ? 'active' : ' '} to={`/DataTable1`}><Icon className="sideBarIcons" icon={['fas', 'briefcase']} />
-                  <span className="nav-label">{g.DataTable}</span>
+                  <span className="nav-label">{g.DataTableWithActions}</span>
                 </Link>
               </li>
             </ul>
@@ -65,7 +65,7 @@ class Sidebar extends React.Component<ISidebarProps, ISidebarState> {
               data-toggle="collapse"
               data-target="#React"
               onClick={this.ToggleSubMenu}
-              className={(this.props.match.url === '/UpiDashboard') ? ' active activeTab' : ' collapsed '}
+              className={(this.props.match.url === '/DropDown') ? ' active activeTab' : ' collapsed '}
             >
               <Icon className="sideBarIcons" icon={['fas', 'underline']} />
               <span className="nav-label">{g.React}
@@ -73,12 +73,12 @@ class Sidebar extends React.Component<ISidebarProps, ISidebarState> {
               </span>
             </a>
             <ul
-              className={(this.props.match.url === '/UpiDashboard') ? 'sub-menu collapse show' : 'sub-menu collapse'}
+              className={(this.props.match.url === '/DropDown') ? 'sub-menu collapse show' : 'sub-menu collapse'}
               id="React"
             >
               <li>
-                <Link className={(this.props.match.url === '/UpiDashboard') ? 'active' : ' '} to={`/UpiDashboard`}><Icon className="sideBarIcons" icon={['fas', 'tachometer-alt']} />
-                  <span className="nav-label">{g.React}</span>
+                <Link className={(this.props.match.url === '/DropDown') ? 'active' : ' '} to={`/DropDown`}><Icon className="sideBarIcons" icon={['fas', 'tachometer-alt']} />
+                  <span className="nav-label">DropDown</span>
                 </Link>
               </li>
               <li>

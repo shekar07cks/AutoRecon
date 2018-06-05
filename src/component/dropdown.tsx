@@ -17,7 +17,7 @@ interface IDropDownProps {
     optionDisplay?: boolean;
 }
 
-class DropDown extends React.Component<IDropDownProps, IDropDownState> {
+export class DropDown extends React.Component<IDropDownProps, IDropDownState> {
     constructor(props: IDropDownProps) {
         super(props);
     }
@@ -40,5 +40,3 @@ class DropDown extends React.Component<IDropDownProps, IDropDownState> {
         );
     }
 }
-
-export default DropDown;

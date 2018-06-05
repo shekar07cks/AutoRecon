@@ -12,7 +12,11 @@ let language = {
     'Profile': 'Profile',
     'Settings': 'Settings',
     'Logout': 'Logout',
-    'SearchableDataTable': 'Searchable DataTable'
+    'SearchableDataTable': 'Searchable DataTable',
+    'DataTableWithActions': 'DataTable With Actions',
+    'DataTableWithCheckBox': 'DataTable With CheckBox',
+    'ChooseaFile': 'Choose a File',
+    'InputField': 'InputField',
     
 };
 export default language;

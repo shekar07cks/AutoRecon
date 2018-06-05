@@ -1,10 +1,10 @@
 import * as React from 'react';
-import gs from '../../language/common/en';
-import { Icon } from '../../component/icon';
+import gs from '../../../language/common/en';
+import { Icon } from '../../../component/icon';
 import { Label, Button } from '@blueprintjs/core';
 import { DateRangePicker, DateRange } from '@blueprintjs/datetime';
-import { MomentDateRange } from '../../component/momentDate';
-import { DataTable as Datatable, IColumn } from '../../component/dataTableNew';
+import { MomentDateRange } from '../../../component/momentDate';
+import { DataTable as Datatable, IColumn } from '../../../component/dataTableNew';
 import _ from 'lodash';
 
 interface IDataTableState {
