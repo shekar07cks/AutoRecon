@@ -5,6 +5,7 @@ import { Label, Button } from '@blueprintjs/core';
 import { DateRangePicker, DateRange } from '@blueprintjs/datetime';
 import { MomentDateRange } from '../../../component/momentDate';
 import { DataTable as Datatable, IColumn } from '../../../component/dataTableNew';
+import Loader from '../../../component/Loader';
 import _ from 'lodash';
 
 interface IDataTableState {
@@ -12,6 +13,7 @@ interface IDataTableState {
     displayDatePicker: boolean;
     dataTable1: Array<IDataTableContent>;
     searchValue: string;
+    loading: boolean;
 }
 
 interface IDataTableContent {
@@ -29,6 +31,7 @@ class DataTable extends React.Component < IDataTableProps, IDataTableState > {
         this.state = {
             dateRange: [undefined, undefined],
             displayDatePicker: false,
+            loading: true,
             dataTable1: [
                 { key: '1', department: 'Department 1', caseOpened: '15', casePending: '5' },
                 { key: '2', department: 'Department 2', caseOpened: '8', casePending: '3' },
@@ -42,6 +45,18 @@ class DataTable extends React.Component < IDataTableProps, IDataTableState > {
             ],
         searchValue: '',    
         };
+    }
+
+    componentWillMount() {
+      this.delayState();
+    }  
+    
+    delayState = () => {
+        setTimeout(() => {
+            this.setState({
+                loading: false
+            });
+        },         4000000);
     }
 
     // DataPicker start
@@ -91,6 +106,7 @@ class DataTable extends React.Component < IDataTableProps, IDataTableState > {
                         </ul>
                     </div>
                 </div>
+                <Loader isLoading={this.state.loading}>
                 <div className="panelContainer customScrollBar">
                     <div className="panel">
                         <div className="panelHeading">
@@ -154,9 +170,10 @@ class DataTable extends React.Component < IDataTableProps, IDataTableState > {
                             />
                         </div>
                     </div>
-
                 </div>
-            </React.Fragment >
+                </ Loader>
+            </React.Fragment>
+           
         );
     }
 }

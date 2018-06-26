@@ -8,7 +8,6 @@ import Footer from './footer';
 import Button from './button';
 
 const headerLogo = require('../assets/images/headerLogo.png');
-const loginBanner = require('../assets/images/loginBanner.jpg');
 
 interface ILoginState {
   isEnabled: boolean;
@@ -33,9 +32,8 @@ class Login extends React.Component<ILoginProps,
     return (
       <div className="login verticalhorizontalMiddle">
         <div className="loginContainer row">
-        <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
           <img className="loginLogo" src={headerLogo} alt="autorecon logo"/>
-            {/* <VirtualKeyboard className="m-t-20 hideVirtualKeyboard" inputType={gs.text} label={gs.BusinessArea}/> */}
             <VirtualKeyboard className={(this.state.isEnabled ? '' : ' hideVirtualKeyboard')} inputType={gs.Text} label={gs.UserName}/>
             <VirtualKeyboard className={(this.state.isEnabled ? '' : ' hideVirtualKeyboard')} inputType={gs.Password} label={gs.Password}/>
             <div className="row loginFooter">
@@ -48,19 +46,6 @@ class Login extends React.Component<ILoginProps,
               <Link to="/DataTable"><Button className="defaultButton primaryButton pt-large" >{s.Login}</Button></Link>
               </div>
             </div>
-          </div>
-          <div className="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 loginSlider">
-              <img src={loginBanner} alt="autorecon logo" />
-            <div className="securityInformation">
-              <h4>Important security information</h4>
-                <ul>
-                  <li>Before logging in, please ensure that the URL address on the address bar of your internet browser starts with https:</li>
-                  <li>Never provide your User ID or password to any one on phone or in response to a mail</li>
-                  <li>Do not enter login or other sensitive information in any pop up window</li>
-                  <li>Verify the site's security certificate by clicking on the padlock icon of your internet browser.</li>
-
-                </ul>
-            </div>  
           </div>
         </div>
         <Footer />
